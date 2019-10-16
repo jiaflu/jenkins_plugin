@@ -1,0 +1,96 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<flow-build plugin="workflow-job@2.33">
+  <actions>
+    <hudson.model.ParametersAction>
+      <safeParameters class="sorted-set"/>
+      <parameters>
+        <hudson.model.StringParameterValue>
+          <name>request_id</name>
+          <description></description>
+          <value>eq</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>slm_instance</name>
+          <description></description>
+          <value>ewq</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>automate_tools</name>
+          <description>The CMSE tools which are under automation</description>
+          <value>cmc,slim,gfc,mct</value>
+        </hudson.model.StringParameterValue>
+      </parameters>
+      <parameterDefinitionNames>
+        <string>request_id</string>
+        <string>slm_instance</string>
+        <string>automate_tools</string>
+      </parameterDefinitionNames>
+    </hudson.model.ParametersAction>
+    <hudson.model.CauseAction>
+      <causeBag class="linked-hash-map">
+        <entry>
+          <hudson.model.Cause_-UserIdCause/>
+          <int>1</int>
+        </entry>
+      </causeBag>
+    </hudson.model.CauseAction>
+  </actions>
+  <queueId>12</queueId>
+  <timestamp>1564382239899</timestamp>
+  <startTime>1564382239964</startTime>
+  <result>FAILURE</result>
+  <duration>3511</duration>
+  <keepLog>false</keepLog>
+  <execution class="org.jenkinsci.plugins.workflow.cps.CpsFlowExecution">
+    <result>FAILURE</result>
+    <script>node {
+   echo &apos;Hello World&apos;
+   stages {
+        stage(&apos;Automatically RegisterServer&apos;) {
+            println(&apos;lalala&apos;)
+            // steps {
+            //     soaTask(
+            //             task: &quot;RegisterServer&quot;,
+            //             ackRequired: &quot;slim,gfc,cmc,mct&quot;,
+            //             requestId: params.request_id,
+            //             instance: params.slm_instance,
+            //             automate_tools: params.automate_tools
+            //     )
+            // }
+        }
+    }
+}</script>
+    <loadedScripts class="map"/>
+    <persistedClean>true</persistedClean>
+    <durabilityHint>MAX_SURVIVABILITY</durabilityHint>
+    <timings class="map">
+      <entry>
+        <string>flowNode</string>
+        <long>1121513327</long>
+      </entry>
+      <entry>
+        <string>classLoad</string>
+        <long>10420852</long>
+      </entry>
+      <entry>
+        <string>run</string>
+        <long>3028455328</long>
+      </entry>
+      <entry>
+        <string>parse</string>
+        <long>26764345</long>
+      </entry>
+      <entry>
+        <string>saveProgram</string>
+        <long>231483342</long>
+      </entry>
+    </timings>
+    <sandbox>true</sandbox>
+    <iota>8</iota>
+    <head>1:8</head>
+    <done>true</done>
+    <resumeBlocked>false</resumeBlocked>
+  </execution>
+  <completed>true</completed>
+  <checkouts class="hudson.util.PersistedList"/>
+</flow-build>

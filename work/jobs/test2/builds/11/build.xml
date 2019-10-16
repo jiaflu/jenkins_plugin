@@ -1,0 +1,108 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<flow-build plugin="workflow-job@2.33">
+  <actions>
+    <hudson.model.ParametersAction>
+      <safeParameters class="sorted-set"/>
+      <parameters>
+        <hudson.model.StringParameterValue>
+          <name>requestId</name>
+          <description>Please input Request ID, Input Required=true</description>
+          <value>das</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>slm_instance</name>
+          <description>Please do not change this value. Which is the instance url of SLM project</description>
+          <value>dsadsa</value>
+        </hudson.model.StringParameterValue>
+      </parameters>
+      <parameterDefinitionNames>
+        <string>requestId</string>
+        <string>slm_instance</string>
+      </parameterDefinitionNames>
+    </hudson.model.ParametersAction>
+    <hudson.model.CauseAction>
+      <causeBag class="linked-hash-map">
+        <entry>
+          <hudson.model.Cause_-UserIdCause/>
+          <int>1</int>
+        </entry>
+      </causeBag>
+    </hudson.model.CauseAction>
+    <org.jenkinsci.plugins.workflow.libs.LibrariesAction plugin="workflow-cps-global-lib@2.14">
+      <libraries/>
+    </org.jenkinsci.plugins.workflow.libs.LibrariesAction>
+  </actions>
+  <queueId>2</queueId>
+  <timestamp>1564494930361</timestamp>
+  <startTime>1564494930375</startTime>
+  <result>FAILURE</result>
+  <duration>603</duration>
+  <charset>UTF-8</charset>
+  <keepLog>false</keepLog>
+  <execution class="org.jenkinsci.plugins.workflow.cps.CpsFlowExecution">
+    <result>FAILURE</result>
+    <script>#!groovy
+def validate_storage
+
+properties([
+        parameters([
+                string(name: &apos;requestId&apos;, defaultValue: &quot;&quot;, description: &apos;Please input Request ID, Input Required=true&apos;),
+                string(name: &apos;slm_instance&apos;, defaultValue: &apos;&apos;, description: &apos;Please do not change this value. Which is the instance url of SLM project&apos;),
+        ])
+])
+
+try {
+
+    stages {
+        stage(&quot;Build Storage&quot;) {
+        println(&quot;Start Build Storage&quot;)
+        }
+        
+        stage(&apos;Automatically RegisterServer&apos;) {
+            steps {
+                soaTask(
+                        task: &quot;RegisterServer&quot;,
+                        ackRequired: &quot;slim,gfc,cmc,mct&quot;,
+                        requestId: params.request_id,
+                        instance: params.slm_instance,
+                        automate_tools: params.automate_tools
+                )
+            }
+        }
+    }
+} catch (err) {
+    throw err
+}</script>
+    <loadedScripts class="map"/>
+    <durabilityHint>MAX_SURVIVABILITY</durabilityHint>
+    <timings class="map">
+      <entry>
+        <string>flowNode</string>
+        <long>234963769</long>
+      </entry>
+      <entry>
+        <string>classLoad</string>
+        <long>27125742</long>
+      </entry>
+      <entry>
+        <string>run</string>
+        <long>293384528</long>
+      </entry>
+      <entry>
+        <string>parse</string>
+        <long>77070433</long>
+      </entry>
+      <entry>
+        <string>saveProgram</string>
+        <long>18482653</long>
+      </entry>
+    </timings>
+    <sandbox>true</sandbox>
+    <iota>4</iota>
+    <head>1:4</head>
+    <done>true</done>
+    <resumeBlocked>false</resumeBlocked>
+  </execution>
+  <completed>true</completed>
+  <checkouts class="hudson.util.PersistedList"/>
+</flow-build>

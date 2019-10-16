@@ -1,0 +1,208 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<Tag plugin="workflow-support@3.3">
+  <node class="org.jenkinsci.plugins.workflow.graph.FlowEndNode" plugin="workflow-api@2.35">
+    <parentIds>
+      <string>5</string>
+    </parentIds>
+    <id>6</id>
+    <startId>2</startId>
+    <result>
+      <name>FAILURE</name>
+      <ordinal>2</ordinal>
+      <color>RED</color>
+      <completeBuild>true</completeBuild>
+    </result>
+  </node>
+  <actions>
+    <wf.a.ErrorAction plugin="workflow-api@2.35">
+      <error class="com.sun.jersey.api.client.ClientHandlerException" plugin="jenkins_helloworld@1.0-SNAPSHOT">
+        <detailMessage>java.net.UnknownHostException: gd</detailMessage>
+        <cause class="java.net.UnknownHostException">
+          <detailMessage>gd</detailMessage>
+          <stackTrace>
+            <trace>java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:184)</trace>
+            <trace>java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)</trace>
+            <trace>java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)</trace>
+            <trace>java.net.Socket.connect(Socket.java:589)</trace>
+            <trace>sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:666)</trace>
+            <trace>sun.security.ssl.BaseSSLSocketImpl.connect(BaseSSLSocketImpl.java:173)</trace>
+            <trace>sun.net.NetworkClient.doConnect(NetworkClient.java:180)</trace>
+            <trace>sun.net.www.http.HttpClient.openServer(HttpClient.java:463)</trace>
+            <trace>sun.net.www.http.HttpClient.openServer(HttpClient.java:558)</trace>
+            <trace>sun.net.www.protocol.https.HttpsClient.&lt;init&gt;(HttpsClient.java:264)</trace>
+            <trace>sun.net.www.protocol.https.HttpsClient.New(HttpsClient.java:367)</trace>
+            <trace>sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.getNewHttpClient(AbstractDelegateHttpsURLConnection.java:191)</trace>
+            <trace>sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1156)</trace>
+            <trace>sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1050)</trace>
+            <trace>sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:177)</trace>
+            <trace>sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1564)</trace>
+            <trace>sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1492)</trace>
+            <trace>java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:480)</trace>
+            <trace>sun.net.www.protocol.https.HttpsURLConnectionImpl.getResponseCode(HttpsURLConnectionImpl.java:347)</trace>
+            <trace>com.sun.jersey.client.urlconnection.URLConnectionClientHandler._invoke(URLConnectionClientHandler.java:249)</trace>
+            <trace>com.sun.jersey.client.urlconnection.URLConnectionClientHandler.handle(URLConnectionClientHandler.java:149)</trace>
+            <trace>com.sun.jersey.api.client.Client.handle(Client.java:648)</trace>
+            <trace>com.sun.jersey.api.client.WebResource.handle(WebResource.java:680)</trace>
+            <trace>com.sun.jersey.api.client.WebResource.access$200(WebResource.java:74)</trace>
+            <trace>com.sun.jersey.api.client.WebResource$Builder.get(WebResource.java:507)</trace>
+            <trace>io.jenkins.plugins.sample.util.RestClientImpl.get(RestClientImpl.java:259)</trace>
+            <trace>io.jenkins.plugins.sample.task.SoaTasks$Execution.run(SoaTasks.java:94)</trace>
+            <trace>io.jenkins.plugins.sample.task.SoaTasks$Execution.run(SoaTasks.java:66)</trace>
+            <trace>org.jenkinsci.plugins.workflow.steps.SynchronousStepExecution.start(SynchronousStepExecution.java:38)</trace>
+            <trace>org.jenkinsci.plugins.workflow.cps.DSL.invokeStep(DSL.java:269)</trace>
+            <trace>org.jenkinsci.plugins.workflow.cps.DSL.invokeMethod(DSL.java:177)</trace>
+            <trace>org.jenkinsci.plugins.workflow.cps.CpsScript.invokeMethod(CpsScript.java:122)</trace>
+            <trace>sun.reflect.GeneratedMethodAccessor313.invoke(Unknown Source)</trace>
+            <trace>sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)</trace>
+            <trace>java.lang.reflect.Method.invoke(Method.java:498)</trace>
+            <trace>org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:93)</trace>
+            <trace>groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)</trace>
+            <trace>groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1213)</trace>
+            <trace>groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1022)</trace>
+            <trace>org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.call(PogoMetaClassSite.java:42)</trace>
+            <trace>org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)</trace>
+            <trace>org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:113)</trace>
+            <trace>org.kohsuke.groovy.sandbox.impl.Checker$1.call(Checker.java:158)</trace>
+            <trace>org.kohsuke.groovy.sandbox.GroovyInterceptor.onMethodCall(GroovyInterceptor.java:23)</trace>
+            <trace>org.jenkinsci.plugins.scriptsecurity.sandbox.groovy.SandboxInterceptor.onMethodCall(SandboxInterceptor.java:157)</trace>
+            <trace>org.jenkinsci.plugins.scriptsecurity.sandbox.groovy.SandboxInterceptor.onMethodCall(SandboxInterceptor.java:142)</trace>
+            <trace>org.kohsuke.groovy.sandbox.impl.Checker$1.call(Checker.java:156)</trace>
+            <trace>org.kohsuke.groovy.sandbox.impl.Checker.checkedCall(Checker.java:160)</trace>
+            <trace>com.cloudbees.groovy.cps.sandbox.SandboxInvoker.methodCall(SandboxInvoker.java:17)</trace>
+            <trace>com.cloudbees.groovy.cps.impl.ContinuationGroup.methodCall(ContinuationGroup.java:84)</trace>
+            <trace>com.cloudbees.groovy.cps.impl.FunctionCallBlock$ContinuationImpl.dispatchOrArg(FunctionCallBlock.java:113)</trace>
+            <trace>com.cloudbees.groovy.cps.impl.FunctionCallBlock$ContinuationImpl.fixArg(FunctionCallBlock.java:83)</trace>
+            <trace>sun.reflect.GeneratedMethodAccessor250.invoke(Unknown Source)</trace>
+            <trace>sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)</trace>
+            <trace>java.lang.reflect.Method.invoke(Method.java:498)</trace>
+            <trace>com.cloudbees.groovy.cps.impl.ContinuationPtr$ContinuationImpl.receive(ContinuationPtr.java:72)</trace>
+            <trace>com.cloudbees.groovy.cps.impl.CollectionLiteralBlock$ContinuationImpl.dispatch(CollectionLiteralBlock.java:55)</trace>
+            <trace>com.cloudbees.groovy.cps.impl.CollectionLiteralBlock$ContinuationImpl.item(CollectionLiteralBlock.java:45)</trace>
+            <trace>sun.reflect.GeneratedMethodAccessor247.invoke(Unknown Source)</trace>
+            <trace>sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)</trace>
+            <trace>java.lang.reflect.Method.invoke(Method.java:498)</trace>
+            <trace>com.cloudbees.groovy.cps.impl.ContinuationPtr$ContinuationImpl.receive(ContinuationPtr.java:72)</trace>
+            <trace>com.cloudbees.groovy.cps.impl.PropertyishBlock$ContinuationImpl.get(PropertyishBlock.java:76)</trace>
+            <trace>com.cloudbees.groovy.cps.LValueBlock$GetAdapter.receive(LValueBlock.java:30)</trace>
+            <trace>com.cloudbees.groovy.cps.impl.PropertyishBlock$ContinuationImpl.fixName(PropertyishBlock.java:66)</trace>
+            <trace>sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)</trace>
+            <trace>sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)</trace>
+            <trace>sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)</trace>
+            <trace>java.lang.reflect.Method.invoke(Method.java:498)</trace>
+            <trace>com.cloudbees.groovy.cps.impl.ContinuationPtr$ContinuationImpl.receive(ContinuationPtr.java:72)</trace>
+            <trace>com.cloudbees.groovy.cps.impl.ConstantBlock.eval(ConstantBlock.java:21)</trace>
+            <trace>com.cloudbees.groovy.cps.Next.step(Next.java:83)</trace>
+            <trace>com.cloudbees.groovy.cps.Continuable$1.call(Continuable.java:174)</trace>
+            <trace>com.cloudbees.groovy.cps.Continuable$1.call(Continuable.java:163)</trace>
+            <trace>org.codehaus.groovy.runtime.GroovyCategorySupport$ThreadCategoryInfo.use(GroovyCategorySupport.java:129)</trace>
+            <trace>org.codehaus.groovy.runtime.GroovyCategorySupport.use(GroovyCategorySupport.java:268)</trace>
+            <trace>com.cloudbees.groovy.cps.Continuable.run0(Continuable.java:163)</trace>
+            <trace>org.jenkinsci.plugins.workflow.cps.SandboxContinuable.access$001(SandboxContinuable.java:18)</trace>
+            <trace>org.jenkinsci.plugins.workflow.cps.SandboxContinuable.run0(SandboxContinuable.java:51)</trace>
+            <trace>org.jenkinsci.plugins.workflow.cps.CpsThread.runNextChunk(CpsThread.java:186)</trace>
+            <trace>org.jenkinsci.plugins.workflow.cps.CpsThreadGroup.run(CpsThreadGroup.java:370)</trace>
+            <trace>org.jenkinsci.plugins.workflow.cps.CpsThreadGroup.access$200(CpsThreadGroup.java:93)</trace>
+            <trace>org.jenkinsci.plugins.workflow.cps.CpsThreadGroup$2.call(CpsThreadGroup.java:282)</trace>
+            <trace>org.jenkinsci.plugins.workflow.cps.CpsThreadGroup$2.call(CpsThreadGroup.java:270)</trace>
+            <trace>org.jenkinsci.plugins.workflow.cps.CpsVmExecutorService$2.call(CpsVmExecutorService.java:66)</trace>
+            <trace>java.util.concurrent.FutureTask.run(FutureTask.java:266)</trace>
+            <trace>hudson.remoting.SingleLaneExecutorService$1.run(SingleLaneExecutorService.java:131)</trace>
+            <trace>jenkins.util.ContextResettingExecutorService$1.run(ContextResettingExecutorService.java:28)</trace>
+            <trace>jenkins.security.ImpersonatingExecutorService$1.run(ImpersonatingExecutorService.java:59)</trace>
+            <trace>java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)</trace>
+            <trace>java.util.concurrent.FutureTask.run(FutureTask.java:266)</trace>
+            <trace>java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)</trace>
+            <trace>java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)</trace>
+            <trace>java.lang.Thread.run(Thread.java:748)</trace>
+          </stackTrace>
+          <suppressedExceptions class="java.util.Collections$UnmodifiableRandomAccessList" resolves-to="java.util.Collections$UnmodifiableList">
+            <c class="list"/>
+            <list reference="../c"/>
+          </suppressedExceptions>
+        </cause>
+        <stackTrace>
+          <trace>com.sun.jersey.client.urlconnection.URLConnectionClientHandler.handle(URLConnectionClientHandler.java:151)</trace>
+          <trace>com.sun.jersey.api.client.Client.handle(Client.java:648)</trace>
+          <trace>com.sun.jersey.api.client.WebResource.handle(WebResource.java:680)</trace>
+          <trace>com.sun.jersey.api.client.WebResource.access$200(WebResource.java:74)</trace>
+          <trace>com.sun.jersey.api.client.WebResource$Builder.get(WebResource.java:507)</trace>
+          <trace>io.jenkins.plugins.sample.util.RestClientImpl.get(RestClientImpl.java:259)</trace>
+          <trace>io.jenkins.plugins.sample.task.SoaTasks$Execution.run(SoaTasks.java:94)</trace>
+          <trace>io.jenkins.plugins.sample.task.SoaTasks$Execution.run(SoaTasks.java:66)</trace>
+          <trace>org.jenkinsci.plugins.workflow.steps.SynchronousStepExecution.start(SynchronousStepExecution.java:38)</trace>
+          <trace>org.jenkinsci.plugins.workflow.cps.DSL.invokeStep(DSL.java:269)</trace>
+          <trace>org.jenkinsci.plugins.workflow.cps.DSL.invokeMethod(DSL.java:177)</trace>
+          <trace>org.jenkinsci.plugins.workflow.cps.CpsScript.invokeMethod(CpsScript.java:122)</trace>
+          <trace>sun.reflect.GeneratedMethodAccessor313.invoke(Unknown Source)</trace>
+          <trace>sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)</trace>
+          <trace>java.lang.reflect.Method.invoke(Method.java:498)</trace>
+          <trace>org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:93)</trace>
+          <trace>groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:325)</trace>
+          <trace>groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1213)</trace>
+          <trace>groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1022)</trace>
+          <trace>org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.call(PogoMetaClassSite.java:42)</trace>
+          <trace>org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:48)</trace>
+          <trace>org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:113)</trace>
+          <trace>org.kohsuke.groovy.sandbox.impl.Checker$1.call(Checker.java:158)</trace>
+          <trace>org.kohsuke.groovy.sandbox.GroovyInterceptor.onMethodCall(GroovyInterceptor.java:23)</trace>
+          <trace>org.jenkinsci.plugins.scriptsecurity.sandbox.groovy.SandboxInterceptor.onMethodCall(SandboxInterceptor.java:157)</trace>
+          <trace>org.jenkinsci.plugins.scriptsecurity.sandbox.groovy.SandboxInterceptor.onMethodCall(SandboxInterceptor.java:142)</trace>
+          <trace>org.kohsuke.groovy.sandbox.impl.Checker$1.call(Checker.java:156)</trace>
+          <trace>org.kohsuke.groovy.sandbox.impl.Checker.checkedCall(Checker.java:160)</trace>
+          <trace>com.cloudbees.groovy.cps.sandbox.SandboxInvoker.methodCall(SandboxInvoker.java:17)</trace>
+          <trace>WorkflowScript.run(WorkflowScript:14)</trace>
+          <trace>___cps.transform___(Native Method)</trace>
+          <trace>com.cloudbees.groovy.cps.impl.ContinuationGroup.methodCall(ContinuationGroup.java:84)</trace>
+          <trace>com.cloudbees.groovy.cps.impl.FunctionCallBlock$ContinuationImpl.dispatchOrArg(FunctionCallBlock.java:113)</trace>
+          <trace>com.cloudbees.groovy.cps.impl.FunctionCallBlock$ContinuationImpl.fixArg(FunctionCallBlock.java:83)</trace>
+          <trace>sun.reflect.GeneratedMethodAccessor250.invoke(Unknown Source)</trace>
+          <trace>sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)</trace>
+          <trace>java.lang.reflect.Method.invoke(Method.java:498)</trace>
+          <trace>com.cloudbees.groovy.cps.impl.ContinuationPtr$ContinuationImpl.receive(ContinuationPtr.java:72)</trace>
+          <trace>com.cloudbees.groovy.cps.impl.CollectionLiteralBlock$ContinuationImpl.dispatch(CollectionLiteralBlock.java:55)</trace>
+          <trace>com.cloudbees.groovy.cps.impl.CollectionLiteralBlock$ContinuationImpl.item(CollectionLiteralBlock.java:45)</trace>
+          <trace>sun.reflect.GeneratedMethodAccessor247.invoke(Unknown Source)</trace>
+          <trace>sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)</trace>
+          <trace>java.lang.reflect.Method.invoke(Method.java:498)</trace>
+          <trace>com.cloudbees.groovy.cps.impl.ContinuationPtr$ContinuationImpl.receive(ContinuationPtr.java:72)</trace>
+          <trace>com.cloudbees.groovy.cps.impl.PropertyishBlock$ContinuationImpl.get(PropertyishBlock.java:76)</trace>
+          <trace>com.cloudbees.groovy.cps.LValueBlock$GetAdapter.receive(LValueBlock.java:30)</trace>
+          <trace>com.cloudbees.groovy.cps.impl.PropertyishBlock$ContinuationImpl.fixName(PropertyishBlock.java:66)</trace>
+          <trace>sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)</trace>
+          <trace>sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)</trace>
+          <trace>sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)</trace>
+          <trace>java.lang.reflect.Method.invoke(Method.java:498)</trace>
+          <trace>com.cloudbees.groovy.cps.impl.ContinuationPtr$ContinuationImpl.receive(ContinuationPtr.java:72)</trace>
+          <trace>com.cloudbees.groovy.cps.impl.ConstantBlock.eval(ConstantBlock.java:21)</trace>
+          <trace>com.cloudbees.groovy.cps.Next.step(Next.java:83)</trace>
+          <trace>com.cloudbees.groovy.cps.Continuable$1.call(Continuable.java:174)</trace>
+          <trace>com.cloudbees.groovy.cps.Continuable$1.call(Continuable.java:163)</trace>
+          <trace>org.codehaus.groovy.runtime.GroovyCategorySupport$ThreadCategoryInfo.use(GroovyCategorySupport.java:129)</trace>
+          <trace>org.codehaus.groovy.runtime.GroovyCategorySupport.use(GroovyCategorySupport.java:268)</trace>
+          <trace>com.cloudbees.groovy.cps.Continuable.run0(Continuable.java:163)</trace>
+          <trace>org.jenkinsci.plugins.workflow.cps.SandboxContinuable.access$001(SandboxContinuable.java:18)</trace>
+          <trace>org.jenkinsci.plugins.workflow.cps.SandboxContinuable.run0(SandboxContinuable.java:51)</trace>
+          <trace>org.jenkinsci.plugins.workflow.cps.CpsThread.runNextChunk(CpsThread.java:186)</trace>
+          <trace>org.jenkinsci.plugins.workflow.cps.CpsThreadGroup.run(CpsThreadGroup.java:370)</trace>
+          <trace>org.jenkinsci.plugins.workflow.cps.CpsThreadGroup.access$200(CpsThreadGroup.java:93)</trace>
+          <trace>org.jenkinsci.plugins.workflow.cps.CpsThreadGroup$2.call(CpsThreadGroup.java:282)</trace>
+          <trace>org.jenkinsci.plugins.workflow.cps.CpsThreadGroup$2.call(CpsThreadGroup.java:270)</trace>
+          <trace>org.jenkinsci.plugins.workflow.cps.CpsVmExecutorService$2.call(CpsVmExecutorService.java:66)</trace>
+          <trace>java.util.concurrent.FutureTask.run(FutureTask.java:266)</trace>
+          <trace>hudson.remoting.SingleLaneExecutorService$1.run(SingleLaneExecutorService.java:131)</trace>
+          <trace>jenkins.util.ContextResettingExecutorService$1.run(ContextResettingExecutorService.java:28)</trace>
+          <trace>jenkins.security.ImpersonatingExecutorService$1.run(ImpersonatingExecutorService.java:59)</trace>
+          <trace>java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)</trace>
+          <trace>java.util.concurrent.FutureTask.run(FutureTask.java:266)</trace>
+          <trace>java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)</trace>
+          <trace>java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)</trace>
+          <trace>java.lang.Thread.run(Thread.java:748)</trace>
+        </stackTrace>
+        <suppressedExceptions class="java.util.Collections$UnmodifiableRandomAccessList" reference="../cause/suppressedExceptions"/>
+      </error>
+    </wf.a.ErrorAction>
+    <wf.a.TimingAction plugin="workflow-api@2.35">
+      <startTime>1564495542141</startTime>
+    </wf.a.TimingAction>
+  </actions>
+</Tag>

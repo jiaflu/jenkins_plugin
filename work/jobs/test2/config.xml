@@ -1,0 +1,62 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<flow-definition plugin="workflow-job@2.33">
+  <actions>
+    <org.jenkinsci.plugins.workflow.multibranch.JobPropertyTrackerAction plugin="workflow-multibranch@2.21">
+      <jobPropertyDescriptors>
+        <string>hudson.model.ParametersDefinitionProperty</string>
+      </jobPropertyDescriptors>
+    </org.jenkinsci.plugins.workflow.multibranch.JobPropertyTrackerAction>
+  </actions>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
+      <triggers/>
+    </org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
+    <hudson.model.ParametersDefinitionProperty>
+      <parameterDefinitions>
+        <hudson.model.StringParameterDefinition>
+          <name>requestId</name>
+          <description>Please input Request ID, Input Required=true</description>
+          <defaultValue></defaultValue>
+          <trim>false</trim>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>slm_instance</name>
+          <description>Please do not change this value. Which is the instance url of SLM project</description>
+          <defaultValue></defaultValue>
+          <trim>false</trim>
+        </hudson.model.StringParameterDefinition>
+      </parameterDefinitions>
+    </hudson.model.ParametersDefinitionProperty>
+  </properties>
+  <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@2.72">
+    <script>#!groovy
+def validate_storage
+
+
+properties([
+        parameters([
+                string(name: &apos;requestId&apos;, defaultValue: &quot;&quot;, description: &apos;Please input Request ID, Input Required=true&apos;),
+                string(name: &apos;slm_instance&apos;, defaultValue: &apos;&apos;, description: &apos;Please do not change this value. Which is the instance url of SLM project&apos;),
+        ])
+])
+
+try {
+    println(&quot;dsadsa&quot;)
+    soaTask(
+            task: &quot;RegisterServer&quot;,
+            ackRequired: &quot;slim,gfc,cmc,mct&quot;,
+            requestId: params.request_id,
+            instance: params.slm_instance,
+            automate_tools: params.automate_tools
+            )
+    
+} catch (err) {
+    throw err
+}</script>
+    <sandbox>true</sandbox>
+  </definition>
+  <triggers/>
+  <disabled>false</disabled>
+</flow-definition>

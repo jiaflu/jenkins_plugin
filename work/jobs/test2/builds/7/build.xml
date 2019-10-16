@@ -1,0 +1,82 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<flow-build plugin="workflow-job@2.33">
+  <actions>
+    <hudson.model.ParametersAction>
+      <safeParameters class="sorted-set"/>
+      <parameters>
+        <hudson.model.StringParameterValue>
+          <name>request_id</name>
+          <description></description>
+          <value>dsa</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>slm_instance</name>
+          <description></description>
+          <value>dsa</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>automate_tools</name>
+          <description>The CMSE tools which are under automation</description>
+          <value>cmc,slim,gfc,mct</value>
+        </hudson.model.StringParameterValue>
+      </parameters>
+      <parameterDefinitionNames>
+        <string>request_id</string>
+        <string>slm_instance</string>
+        <string>automate_tools</string>
+      </parameterDefinitionNames>
+    </hudson.model.ParametersAction>
+    <hudson.model.CauseAction>
+      <causeBag class="linked-hash-map">
+        <entry>
+          <hudson.model.Cause_-UserIdCause/>
+          <int>1</int>
+        </entry>
+      </causeBag>
+    </hudson.model.CauseAction>
+  </actions>
+  <queueId>10</queueId>
+  <timestamp>1564382094925</timestamp>
+  <startTime>1564382094948</startTime>
+  <result>SUCCESS</result>
+  <duration>1376</duration>
+  <keepLog>false</keepLog>
+  <execution class="org.jenkinsci.plugins.workflow.cps.CpsFlowExecution">
+    <result>SUCCESS</result>
+    <script>node {
+   echo &apos;Hello World&apos;
+}</script>
+    <loadedScripts class="map"/>
+    <persistedClean>true</persistedClean>
+    <durabilityHint>MAX_SURVIVABILITY</durabilityHint>
+    <timings class="map">
+      <entry>
+        <string>flowNode</string>
+        <long>753735790</long>
+      </entry>
+      <entry>
+        <string>classLoad</string>
+        <long>11854752</long>
+      </entry>
+      <entry>
+        <string>run</string>
+        <long>956559951</long>
+      </entry>
+      <entry>
+        <string>parse</string>
+        <long>20063140</long>
+      </entry>
+      <entry>
+        <string>saveProgram</string>
+        <long>51335557</long>
+      </entry>
+    </timings>
+    <sandbox>true</sandbox>
+    <iota>8</iota>
+    <head>1:8</head>
+    <done>true</done>
+    <resumeBlocked>false</resumeBlocked>
+  </execution>
+  <completed>true</completed>
+  <checkouts class="hudson.util.PersistedList"/>
+</flow-build>

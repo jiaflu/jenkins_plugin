@@ -1,0 +1,114 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<flow-build plugin="workflow-job@2.33">
+  <actions>
+    <hudson.model.ParametersAction>
+      <safeParameters class="sorted-set"/>
+      <parameters>
+        <hudson.model.StringParameterValue>
+          <name>request_id</name>
+          <description></description>
+          <value>dsa</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>slm_instance</name>
+          <description></description>
+          <value>dsa</value>
+        </hudson.model.StringParameterValue>
+        <hudson.model.StringParameterValue>
+          <name>automate_tools</name>
+          <description>The CMSE tools which are under automation</description>
+          <value>cmc,slim,gfc,mct</value>
+        </hudson.model.StringParameterValue>
+      </parameters>
+      <parameterDefinitionNames>
+        <string>request_id</string>
+        <string>slm_instance</string>
+        <string>automate_tools</string>
+      </parameterDefinitionNames>
+    </hudson.model.ParametersAction>
+    <hudson.model.CauseAction>
+      <causeBag class="linked-hash-map">
+        <entry>
+          <hudson.model.Cause_-UserIdCause/>
+          <int>1</int>
+        </entry>
+      </causeBag>
+    </hudson.model.CauseAction>
+    <org.jenkinsci.plugins.workflow.libs.LibrariesAction plugin="workflow-cps-global-lib@2.14">
+      <libraries/>
+    </org.jenkinsci.plugins.workflow.libs.LibrariesAction>
+  </actions>
+  <queueId>1</queueId>
+  <timestamp>1564494643794</timestamp>
+  <startTime>1564494643820</startTime>
+  <result>FAILURE</result>
+  <duration>6695</duration>
+  <charset>UTF-8</charset>
+  <keepLog>false</keepLog>
+  <execution class="org.jenkinsci.plugins.workflow.cps.CpsFlowExecution">
+    <result>FAILURE</result>
+    <script>#!groovy
+def validate_storage
+
+properties([
+        parameters([
+                string(name: &apos;requestId&apos;, defaultValue: &quot;&quot;, description: &apos;Please input Request ID, Input Required=true&apos;),
+                string(name: &apos;slm_instance&apos;, defaultValue: &apos;&apos;, description: &apos;Please do not change this value. Which is the instance url of SLM project&apos;),
+        ])
+])
+
+try {
+
+    stage(&quot;Build Storage&quot;) {
+        println(&quot;Start Build Storage&quot;)
+    }
+
+    stage(&quot;Callback the result&quot;) {
+        httpRequest customHeaders: [[maskValue: false, name: &apos;content-Type&apos;, value: &apos;application/json&apos;]],
+                httpMode: &apos;POST&apos;,
+                requestBody: &quot;&quot;&quot;{
+                &quot;id&quot;: &quot;${params[&apos;requestId&apos;]}&quot;,
+                &quot;taskType&quot;:&quot;createVolume&quot;,
+                &quot;buildNumber&quot;: &quot;22&quot;,
+                &quot;storageServer&quot;: &quot;12.34.56.129&quot;,
+                &quot;volumeName&quot;: &quot;www_doc&quot;,
+                &quot;status&quot;: &quot;0&quot;,
+                &quot;message&quot;: &quot;This is an errors for the example.&quot;
+            }&quot;&quot;&quot;,  url: &quot;${params[&apos;slm_instance&apos;]}/slm/pipeline/storage/callback&quot;
+    }
+} catch (err) {
+    throw err
+}</script>
+    <loadedScripts class="map"/>
+    <durabilityHint>MAX_SURVIVABILITY</durabilityHint>
+    <timings class="map">
+      <entry>
+        <string>flowNode</string>
+        <long>1515161398</long>
+      </entry>
+      <entry>
+        <string>classLoad</string>
+        <long>570767997</long>
+      </entry>
+      <entry>
+        <string>run</string>
+        <long>4775201820</long>
+      </entry>
+      <entry>
+        <string>parse</string>
+        <long>797678719</long>
+      </entry>
+      <entry>
+        <string>saveProgram</string>
+        <long>1202017873</long>
+      </entry>
+    </timings>
+    <sandbox>true</sandbox>
+    <iota>13</iota>
+    <head>1:13</head>
+    <done>true</done>
+    <resumeBlocked>false</resumeBlocked>
+  </execution>
+  <completed>true</completed>
+  <checkouts class="hudson.util.PersistedList"/>
+</flow-build>

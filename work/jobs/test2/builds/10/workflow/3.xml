@@ -1,0 +1,70 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<Tag plugin="workflow-support@3.3">
+  <node class="cps.n.StepAtomNode" plugin="workflow-cps@2.72">
+    <parentIds>
+      <string>2</string>
+    </parentIds>
+    <id>3</id>
+    <descriptorId>org.jenkinsci.plugins.workflow.multibranch.JobPropertyStep</descriptorId>
+  </node>
+  <actions>
+    <cps.a.ArgumentsActionImpl plugin="workflow-cps@2.72">
+      <arguments>
+        <entry>
+          <string>properties</string>
+          <list>
+            <org.jenkinsci.plugins.structs.describable.UninstantiatedDescribable plugin="structs@1.19">
+              <symbol>parameters</symbol>
+              <arguments class="linked-hash-map">
+                <entry>
+                  <string>&lt;anonymous&gt;</string>
+                  <list>
+                    <org.jenkinsci.plugins.structs.describable.UninstantiatedDescribable>
+                      <symbol>string</symbol>
+                      <arguments class="linked-hash-map">
+                        <entry>
+                          <string>name</string>
+                          <string>requestId</string>
+                        </entry>
+                        <entry>
+                          <string>defaultValue</string>
+                          <string></string>
+                        </entry>
+                        <entry>
+                          <string>description</string>
+                          <string>Please input Request ID, Input Required=true</string>
+                        </entry>
+                      </arguments>
+                    </org.jenkinsci.plugins.structs.describable.UninstantiatedDescribable>
+                    <org.jenkinsci.plugins.structs.describable.UninstantiatedDescribable>
+                      <symbol>string</symbol>
+                      <arguments class="linked-hash-map">
+                        <entry>
+                          <string>name</string>
+                          <string>slm_instance</string>
+                        </entry>
+                        <entry>
+                          <string>defaultValue</string>
+                          <string></string>
+                        </entry>
+                        <entry>
+                          <string>description</string>
+                          <string>Please do not change this value. Which is the instance url of SLM project</string>
+                        </entry>
+                      </arguments>
+                    </org.jenkinsci.plugins.structs.describable.UninstantiatedDescribable>
+                  </list>
+                </entry>
+              </arguments>
+            </org.jenkinsci.plugins.structs.describable.UninstantiatedDescribable>
+          </list>
+        </entry>
+      </arguments>
+      <isUnmodifiedBySanitization>true</isUnmodifiedBySanitization>
+    </cps.a.ArgumentsActionImpl>
+    <wf.a.TimingAction plugin="workflow-api@2.35">
+      <startTime>1564494646726</startTime>
+    </wf.a.TimingAction>
+    <s.a.LogStorageAction/>
+  </actions>
+</Tag>
